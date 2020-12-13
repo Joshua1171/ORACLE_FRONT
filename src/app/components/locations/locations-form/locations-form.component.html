@@ -1,0 +1,54 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-secondary my-2" routerLink="/locations">volver</button>
+    <form>
+      <div class="form-group">
+        <label for="street_address">STREET_ADDRESS</label>
+        <input type="text" name="street_address" class="form-control" 
+        [(ngModel)]="locations.street_address">
+        <div class="alert alert-danger" *ngIf="error?.street_address">
+          {{error.street_address}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="postal_code">POSTAL_CODE</label>
+        <input type="text" name="postal_code" class="form-control" 
+        [(ngModel)]="locations.postal_code">
+        <div class="alert alert-danger" *ngIf="error?.postal_code">
+          {{error.postal_code}}
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="city">CITY</label>
+        <input type="text" name="city" class="form-control" 
+        [(ngModel)]="locations.city">
+        <div class="alert alert-danger" *ngIf="error?.city">
+          {{error.city}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state_province">STATE_PROVINCE</label>
+        <input type="text" name="state_province" class="form-control" 
+        [(ngModel)]="locations.state_province">
+        <div class="alert alert-danger" *ngIf="error?.state_province">
+          {{error.state_province}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country_id">COUNTRY_ID</label>
+        <input type="text" name="country_id" class="form-control" 
+        [(ngModel)]="locations.country_id">
+        <div class="alert alert-danger" *ngIf="error?.country_id">
+          {{error.country_id}
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary"
+        (click)="locations.location_id ? editar(): crear()">
+        {{locations.location_id ? 'Editar':'Crear'}}</button>
+      </div>
+    </form>
+    </div>
+  </div>

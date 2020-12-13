@@ -1,0 +1,27 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/regions/form">crear</button>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>region_id</th>
+        <th>region_name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let region of regions">
+        <td>{{region.region_id}}</td>
+        <td>{{region.region_name | uppercase}}</td>
+        <td> <button class="btn btn-primary btn-sm"
+          [routerLink]="['/countries/form',region.region_id]">
+          editar</button></td>
+        <td> <button class="btn btn-danger btn-sm"
+          (click)="eliminar(region)">
+          eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  

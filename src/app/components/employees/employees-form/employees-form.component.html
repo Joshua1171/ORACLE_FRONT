@@ -1,0 +1,99 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-secondary my-2" routerLink="/employees">volver</button>
+    <form>
+      <div class="form-group">
+        <label for="employee_id">EMPLOYEE_ID</label>
+        <input type="number" name="employee_id" class="form-control" 
+        [(ngModel)]="employees.employee_id">
+        <div class="alert alert-danger" *ngIf="error?.employee_id">
+          {{error.employee_id}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="first_name">FIRST_NAME</label>
+        <input type="text" name="first_name" class="form-control" 
+        [(ngModel)]="employees.first_name">
+        <div class="alert alert-danger" *ngIf="error?.first_name">
+          {{error.first_name}}
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="last_name">LAST_NAME</label>
+        <input type="text" name="last_name" class="form-control" 
+        [(ngModel)]="employees.last_name">
+        <div class="alert alert-danger" *ngIf="error?.last_name">
+          {{error.last_name}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input type="email" name="email" class="form-control" 
+        [(ngModel)]="employees.email">
+        <div class="alert alert-danger" *ngIf="error?.email">
+          {{error.email}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone_number">PHONE_NUMBER</label>
+        <input type="text" name="phone_number" class="form-control" 
+        [(ngModel)]="employees.phone_number">
+        <div class="alert alert-danger" *ngIf="error?.phone_number">
+          {{error.phone_number}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hire_date">HIRE_DATE</label>
+        <input type="datetime" name="hire_date" class="form-control" 
+        [(ngModel)]="employees.hire_date">
+        <div class="alert alert-danger" *ngIf="error?.hire_date">
+          {{error.hire_date}}
+        </div>
+      </div><div class="form-group">
+        <label for="job_id">JOB_ID</label>
+        <input type="number" name="job_id" class="form-control" 
+        [(ngModel)]="employees.job_id">
+        <div class="alert alert-danger" *ngIf="error?.job_id">
+          {{error.job_id}}
+        </div>
+      </div><div class="form-group">
+        <label for="salary">SALARY</label>
+        <input type="number" name="salary" class="form-control" 
+        [(ngModel)]="employees.salary">
+        <div class="alert alert-danger" *ngIf="error?.salary">
+          {{error.salary}}
+        </div>
+      </div><div class="form-group">
+        <label for="commission_pct">COMMISSION_PCT</label>
+        <input type="number" name="commission_pct" class="form-control" 
+        [(ngModel)]="employees.commission_ptc">
+        <div class="alert alert-danger" *ngIf="error?.commission_pct">
+          {{error.commission_pct}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="manager_id">MANAGER_ID</label>
+        <input type="number" name="manager_id" class="form-control" 
+        [(ngModel)]="employees.manager_id">
+        <div class="alert alert-danger" *ngIf="error?.manager_id">
+          {{error.manager_id}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="department_id">DEPARTMENT_ID</label>
+        <input type="number" name="department_id" class="form-control" 
+        [(ngModel)]="employees.department_id">
+        <div class="alert alert-danger" *ngIf="error?.department_id">
+          {{error.department_id}}
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary"
+        (click)="employees.employee_id ? editar(): crear()">
+        {{employees.employee_id ? 'Editar':'Crear'}}</button>
+      </div>
+    </form>
+    </div>
+  </div>

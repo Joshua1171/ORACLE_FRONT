@@ -1,0 +1,33 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/jobHistory/form">crear</button>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>employee_id</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>job_id</th>
+        <th>department_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobh">
+        <td>{{job.employee_id}}</td>
+        <td>{{job.start_date | date:'dd-MM-yyyy'}}</td>
+        <td>{{job.end_date | date:'dd-MM-yyyy'}}</td>
+        <td>{{job.job_id}}</td>
+        <td>{{job.department_id}}</td>
+        <td> <button class="btn btn-primary btn-sm"
+          [routerLink]="['/jobHistory/form',job.employee_id]">
+          editar</button></td>
+        <td> <button class="btn btn-danger btn-sm"
+          (click)="eliminar(job)">
+          eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  

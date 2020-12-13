@@ -9,7 +9,7 @@ import { Countries } from '../models/countries';
 export class CountriesService {
 
 
-  private baseEndpoint='http://localhost:8888/countries';
+  private baseEndpoint='http://localhost:8080/countries';
   
   private cabeceras: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -20,19 +20,19 @@ export class CountriesService {
   public listar(): Observable<Countries[]>{
     return this.http.get<Countries[]>(this.baseEndpoint);
   }
-  public ver(id: number): Observable<Countries>{
+  public ver(id: string): Observable<Countries>{
     return this.http.get<Countries>(`${this.baseEndpoint}/${id}`);
   }
-  public crear(Countries: Countries): Observable<Countries> {
-    return this.http.post<Countries>(this.baseEndpoint, Countries,
+  public crear(countries: Countries): Observable<Countries> {
+    return this.http.post<Countries>(`${this.baseEndpoint}/${countries.country_id}`, countries,
       { headers: this.cabeceras });
   }
-  public eliminar(id: number): Observable<void> {
+  public eliminar(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseEndpoint}/${id}`);
   }
 
-  public editar(Countries: Countries): Observable<Countries> {
-    return this.http.put<Countries>(`${this.baseEndpoint}/${Countries.country_id}`,Countries,
+  public editar(countries: Countries): Observable<Countries> {
+    return this.http.put<Countries>(`${this.baseEndpoint}/${countries.country_id}`,countries,
       { headers: this.cabeceras });
   }
 }

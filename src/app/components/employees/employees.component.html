@@ -1,0 +1,45 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/employees/form">crear</button>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>employee_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>phone_number</th>
+        <th>hire_date</th>
+        <th>job_id</th>
+        <th>salary</th>
+        <th>commission_pct</th>
+        <th>manager_id</th>
+        <th>department_id</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.employee_id}}</td>
+        <td>{{employee.first_name}}</td>
+        <td>{{employee.last_name}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phone_number}}</td>
+        <td>{{employee.hire_date | date:'dd-MM-yyyy'}}</td>
+        <td>{{employee.job_id}}</td>
+        <td>{{employee.salary}}</td>
+        <td>{{employee.commission_ptc}}</td>
+        <td>{{employee.manager_id}}</td>
+        <td>{{employee.department_id}}</td>
+        <td> <button class="btn btn-primary btn-sm"
+          [routerLink]="['/employees/form',employee.employee_id]">
+          editar</button></td>
+        <td> <button class="btn btn-danger btn-sm"
+          (click)="eliminar(employee)">
+          eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,35 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/locations/form">crear</button>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>location_id</th>
+        <th>street_address</th>
+        <th>postal_code</th>
+        <th>city</th>
+        <th>state_province</th>
+        <th>contry_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations">
+        <td>{{location.location_id}}</td>
+        <td>{{location.street_address}}</td>
+        <td>{{location.postal_code}}</td>
+        <td>{{location.city | uppercase}}</td>
+        <td>{{location.state_province}}</td>
+        <td>{{location.country_id}}</td>
+        <td> <button class="btn btn-primary btn-sm"
+          [routerLink]="['/locations/form',location.location_id]">
+          editar</button></td>
+        <td> <button class="btn btn-danger btn-sm"
+          (click)="eliminar(location)">
+          eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  

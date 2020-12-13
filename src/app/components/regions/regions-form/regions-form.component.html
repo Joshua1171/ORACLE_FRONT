@@ -1,0 +1,29 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-secondary my-2" routerLink="/regions">volver</button>
+    <form>
+      <div class="form-group">
+        <label for="counetryId">Region_id</label>
+        <input type="text" name="regionId" class="form-control" 
+        [(ngModel)]="regions.region_id">
+        <div class="alert alert-danger" *ngIf="error?.region_id">
+          {{error.region_id}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="countryName">Region_name</label>
+        <input type="text" name="regionName" class="form-control" 
+        [(ngModel)]="regions.region_name">
+        <div class="alert alert-danger" *ngIf="error?.region_name">
+          {{error.region_name}}
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary"
+        (click)="ruta() ? crear(): editar()">
+        {{ruta() ? 'Crear':'Editar'}}</button>
+      </div>
+    </form>
+    </div>
+  </div>

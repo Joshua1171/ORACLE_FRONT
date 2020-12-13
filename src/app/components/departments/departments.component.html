@@ -1,0 +1,31 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/departments/form">crear</button>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>departments_id</th>
+        <th>departmets_name</th>
+        <th>manager_id</th>
+        <th>location_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{department.department_id}}</td>
+        <td>{{department.department_name}}</td>
+        <td>{{department.location_id}}</td>
+        <td>{{department.manager_id}}</td>
+        <td> <button class="btn btn-primary btn-sm"
+          [routerLink]="['/departments/form',department.department_id]">
+          editar</button></td>
+        <td> <button class="btn btn-danger btn-sm"
+          (click)="eliminar(department)">
+          eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  
