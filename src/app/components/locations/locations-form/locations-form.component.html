@@ -4,7 +4,7 @@
       <button class="btn btn-secondary my-2" routerLink="/locations">volver</button>
     <form>
       <div class="form-group">
-        <label for="street_address">STREET_ADDRESS</label>
+        <label for="street_address">street_address</label>
         <input type="text" name="street_address" class="form-control" 
         [(ngModel)]="locations.street_address">
         <div class="alert alert-danger" *ngIf="error?.street_address">
@@ -22,7 +22,7 @@
       
       <div class="form-group">
         <label for="city">CITY</label>
-        <input type="text" name="city" class="form-control" 
+        <input type="text" name="city" class="form-control" id="city"
         [(ngModel)]="locations.city">
         <div class="alert alert-danger" *ngIf="error?.city">
           {{error.city}}
@@ -30,7 +30,7 @@
       </div>
       <div class="form-group">
         <label for="state_province">STATE_PROVINCE</label>
-        <input type="text" name="state_province" class="form-control" 
+        <input type="text" name="state_province" class="form-control" id="state_province" 
         [(ngModel)]="locations.state_province">
         <div class="alert alert-danger" *ngIf="error?.state_province">
           {{error.state_province}}

@@ -22,7 +22,7 @@ export class LocationsFormComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id: number= +params.get('id')!;
       if(id){
-        this.service.ver(id).subscribe(region => this.locations = region)
+        this.service.ver(id).subscribe(location => this.locations = location)
       }
     });
   }

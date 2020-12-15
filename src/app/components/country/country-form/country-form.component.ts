@@ -33,18 +33,17 @@ export class CountryFormComponent implements OnInit {
 
       }
     });
-    this.country_id=this.country.country_id;
-    this.country_name=this.country.country_name;
-    this.region_id=this.country.region_id;
+   this.ruta()
   }
 
   public ruta(): boolean{
     var pathname= window.location.pathname;
     console.log(pathname);
-    if(pathname==='countries/form' && this.bandera){
-      return true;
+    if(pathname==='countries/form'){
+      this.bandera=true;
+      return this.bandera;
     }else{
-      return false;
+      return this.bandera;
     }
   }
 
