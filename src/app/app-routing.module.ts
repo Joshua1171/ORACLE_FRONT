@@ -15,7 +15,8 @@ import { LocationsFormComponent } from './components/locations/locations-form/lo
 import { LocationsComponent } from './components/locations/locations.component';
 import { RegionsFormComponent } from './components/regions/regions-form/regions-form.component';
 import { RegionsComponent } from './components/regions/regions.component';
-
+import {LoginComponent} from './components/login/login.component';
+import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 
 const routes: Routes = [
   {path:'countries',component:CountryComponent},
@@ -39,7 +40,9 @@ const routes: Routes = [
   {path:'employees/form/:id',component:EmployeesFormComponent},
   {path:'jobHistory',component:JobhComponent},
   {path:'jobHistory/form',component:JobhformComponent},
-  {path:'jobHistory/form/:id',component:JobhformComponent}
+  {path:'jobHistory/form/:id',component:JobhformComponent},
+  {path:'login',component:LoginComponent}, 
+  {path:'aspirantes',component:AspirantesComponent} 
 ];
 
 @NgModule({

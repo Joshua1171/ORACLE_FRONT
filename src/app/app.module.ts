@@ -26,6 +26,8 @@ import { DepartmentsFormComponent } from './components/departments/departments-f
 import { EmployeesFormComponent } from './components/employees/employees-form/employees-form.component';
 import { JobhComponent } from './components/jobh/jobh.component';
 import { JobhformComponent } from './components/jobh/jobhform/jobhform.component';
+import { LoginComponent } from './components/login/login.component';
+import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { JobhformComponent } from './components/jobh/jobhform/jobhform.component
     EmployeesFormComponent,
     JobhComponent,
     JobhformComponent,
+    LoginComponent,
+    AspirantesComponent,
   ],
   imports: [
     BrowserModule,

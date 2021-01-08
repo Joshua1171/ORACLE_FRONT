@@ -17,7 +17,6 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listar().subscribe(countries => this.countries = countries);
-
   }
 
   public eliminar(country: Countries): void{

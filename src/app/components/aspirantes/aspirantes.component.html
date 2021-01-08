@@ -1,0 +1,38 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="buscar" name="boton" aria-label="Search" [(ngModel)]="variable">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="filtrar();">buscar</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="limpiar();">limpiar</button> 
+      </form>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>id_aspirante</th>
+        <th>nombres</th>
+        <th>apellidos</th>
+        <th>experiencia(años)</th>
+        <th>tecnologia</th>
+        <th>estatus</th>    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let aspirante of aspirantes">
+        <td>{{aspirante.id_aspirante }}</td>
+        <td>{{aspirante.nombres }}</td>
+        <td>{{aspirante.apellidos }}</td>
+        <td>{{aspirante.experiencia}}</td>
+        <td>{{aspirante.tecnologia }}</td>  
+        <td>{{aspirante.estatus===0? "rechazado":"aprobado"  }}</td>
+        <td> <button class="btn btn-danger btn-sm" *ngIf="aspirante.estatus===0; else elseBoton" >
+          archivar</button>
+          <ng-template #elseBoton><button class="btn btn-primary btn-sm">
+            aceptar</button></ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+  
